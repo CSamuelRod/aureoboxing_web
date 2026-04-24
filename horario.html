@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horarios y Tarifas | Aureo Boxing Usera</title>
+    <meta name="description" content="Consulta los horarios y tarifas de Aureo Boxing Usera. Clases de boxeo, Muay Thai y entrenamiento personal con Clara Castro en Madrid.">
+    <title>Horarios y Servicios | Aureo Boxing Usera</title>
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon_boxeo.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "border": "#f1d600",
+                "popup": { "background": "#000" },
+                "button": { "background": "#f1d600", "text": "#000" }
+            },
+            "type": "opt-in",
+            "content": {
+                "message": "En Boxeo Usera usamos cookies para medir las visitas. ¿Nos das permiso?",
+                "allow": "Aceptar",
+                "deny": "Rechazar",
+                "link": "Leer política",
+                "href": "politica-de-cookies.html"
+            },
+            onInitialise: function (status) { if (this.hasConsented()) { cargarAnalytics(); } },
+            onStatusChange: function(status, chosenBefore) { if (this.hasConsented()) { cargarAnalytics(); } }
+        });
+    });
+
+    function cargarAnalytics() {
+        // Aquí va tu código de Google Analytics (el mismo que en la landing)
+        console.log("Analytics cargado en página secundaria");
+    }
+    </script>
 </head>
 <body>
 
@@ -59,38 +91,43 @@
     </main>
 
 <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-    <h4>BOXEO USERA</h4>
-    <p>La escuela de referencia para <strong>clases de boxeo y muay thai en el barrio de Usera</strong>. Entrena en un ambiente auténtico con profesionales dedicados al noble arte en Madrid. Sin matrícula, sin permanencia, solo resultados.</p>
-</div>
-            <div class="footer-col">
-                <h4>CONTACTO</h4>
-                <p>📍 Calle de Usera, Madrid</p>
-                <p>📞 <a href="tel:+34614296159">614 29 61 59</a></p>
-                <p>📧 info@boxeousera.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>HORARIO</h4>
-                <p>Lunes - Viernes: 08:00 - 22:00</p>
-                <p>Sábados: 10:00 - 14:00</p>
-            </div>
-            <div class="footer-col">
-                <h4>SÍGUENOS</h4>
-                <a href="https://wa.me/34614296159" class="wa-link">WhatsApp Directo</a>
-                <div class="legal-info">
-                    <small>Foto Hero: Pexels (Taha Samet Arslan)</small><br>
-                    <small><a href="https://www.flaticon.es/iconos-gratis/boxer" title="boxer iconos">Boxer iconos creados por YnJStudio - Flaticon</a></small>
-                </div>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>BOXEO USERA</h4>
+            <p>La escuela de referencia para <strong>clases de boxeo y muay thai en el barrio de Usera</strong>. Entrena en un ambiente auténtico con profesionales dedicados al noble arte en Madrid. Sin matrícula, sin permanencia, solo resultados.</p>
+        </div>
+        <div class="footer-col">
+            <h4>CONTACTO</h4>
+            <p>📍 Calle de Usera, Madrid</p>
+            <p>📞 <a href="tel:+34614296159">614 29 61 59</a></p>
+            <p>📧 info@boxeousera.com</p>
+        </div>
+        <div class="footer-col">
+            <h4>HORARIO</h4>
+            <p>Lunes - Viernes: 08:00 - 22:00</p>
+            <p>Sábados: 10:00 - 14:00</p>
+        </div>
+        <div class="footer-col">
+            <h4>SÍGUENOS</h4>
+            <a href="https://wa.me/34614296159" class="wa-link" target="_blank" rel="noopener noreferrer">WhatsApp Directo</a>
+            <div class="legal-info">
+                <small>Foto Hero: Pexels (Taha Samet Arslan)</small><br>
+                <small><a href="https://www.flaticon.es/iconos-gratis/boxer" title="boxer iconos">Boxer iconos creados por YnJStudio - Flaticon</a></small>
             </div>
         </div>
-        <div class="footer-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.096998147544!2d-3.708230224323236!3d40.38454277144478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227d0a6f794bb%3A0xa1686ee9022f2101!2sAUREO%20BOXING!5e0!3m2!1ses!2ses!4v1777011258103!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Boxeo Usera. Sin Matrícula. Sin Permanencia.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.27415444005!2d-3.7100!3d40.3840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42263722254d39%3A0x6b107e7b686e5792!2sUsera%2C%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Boxeo Usera. Sin Matrícula. Sin Permanencia.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">
+            <a href="aviso-legal.html" style="color: #ccc; text-decoration: none;">Aviso Legal</a> | 
+            <a href="politica-de-privacidad.html" style="color: #ccc; text-decoration: none;">Política de Privacidad</a> | 
+            <a href="politica-de-cookies.html" style="color: #ccc; text-decoration: none;">Política de Cookies</a>
+        </p>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </body>
