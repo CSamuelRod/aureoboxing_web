@@ -1,0 +1,343 @@
+:root {
+    --color-50: #F7F6ED;
+    --color-100: #EAE5CD;
+    --color-200: #DCD5AD;
+    --color-300: #CEC48D;
+    --color-400: #BAAC5F;
+    --color-500: #B3A34D;
+    --color-900: #322E15;
+    --color-950: #121008;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-950);
+    color: var(--color-50);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- NAVBAR --- */
+/* Esconde el estilo del enlace en el logo */
+.navbar a:has(.logo) {
+    text-decoration: none;
+    color: inherit;
+    display: contents; /* Hace que el enlace no afecte al diseño del flexbox */
+}
+
+/* Por si tu navegador es antiguo y no soporta :has() */
+.navbar > a {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(18, 16, 8, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
+.logo span { color: var(--color-500); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin: 0 15px; }
+.nav-links a { text-decoration: none; color: var(--color-50); font-size: 0.85rem; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+.nav-links a:hover { color: var(--color-500); }
+
+.btn-nav {
+    background: var(--color-500);
+    color: var(--color-950);
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* --- HERO --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+                url('assets/ring_boxeo.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: clamp(4rem, 15vw, 9rem); line-height: 0.8; margin: 15px 0; font-weight: 900; }
+.hero-top-text { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; color: var(--color-200); }
+.slogan { font-size: clamp(1.2rem, 3vw, 2rem); color: var(--color-400); margin-bottom: 20px; font-style: italic; }
+.hero-badges { margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+.separator { color: var(--color-500); margin: 0 10px; }
+.promo { margin-bottom: 30px; font-size: 1.2rem; }
+
+.btn-cta {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: var(--color-500);
+    color: var(--color-950);
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+.btn-cta:hover { background-color: var(--color-100); transform: translateY(-3px); }
+
+/* --- SECCIONES GENERALES --- */
+.container { padding: 100px 10%; }
+.bg-alt { background-color: #18160d; }
+.section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; text-transform: uppercase; position: relative; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--color-500); margin: 10px auto; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+
+/* --- TARJETAS DE CLASES --- */
+.card {
+    background: var(--color-900);
+    padding: 50px 30px;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.3s;
+}
+.card:hover { border-top: 5px solid var(--color-500); transform: translateY(-5px); }
+
+/* --- SECCIÓN EQUIPO (NUEVO) --- */
+.team-intro {
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 50px;
+    color: var(--color-400);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.profile {
+    background: var(--color-950);
+    padding: 40px 20px;
+    border: 1px solid var(--color-900);
+    text-align: center;
+}
+
+.img-frame {
+    width: 180px; height: 180px;
+    background: var(--color-500);
+    margin: 0 auto 25px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    overflow: hidden;
+}
+
+.img-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile h3 { color: var(--color-500); margin-bottom: 5px; text-transform: uppercase; font-size: 1.4rem; }
+
+.role { font-weight: bold; font-size: 0.9rem; color: var(--color-200); margin-bottom: 15px; text-transform: uppercase; }
+
+.achievements { list-style: none; padding: 0; margin-bottom: 20px; }
+.achievements li { font-size: 0.85rem; margin-bottom: 5px; color: var(--color-100); }
+.achievements li::before { content: "• "; color: var(--color-500); font-weight: bold; }
+
+.bio { font-size: 0.9rem; border-top: 1px solid var(--color-900); padding-top: 15px; margin-top: 10px; color: #aaa; }
+
+/* --- TARIFAS --- */
+.grid-tarifas { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+.price-box {
+    border: 1px solid var(--color-800);
+    padding: 30px 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+.price-box:hover { border-color: var(--color-500); background: rgba(179, 163, 77, 0.1); }
+.price-box h4 { color: var(--color-400); margin-bottom: 10px; text-transform: uppercase; }
+.price-box p { font-size: 1.5rem; font-weight: bold; color: var(--color-50); }
+
+/* --- FOOTER --- */
+.main-footer { background: #000; padding: 80px 10% 20px; border-top: 1px solid var(--color-900); }
+.footer-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 40px; 
+    margin-bottom: 50px;
+}
+
+.footer-col h4 { color: var(--color-500); margin-bottom: 20px; font-size: 1.1rem; }
+.footer-col p, .footer-col a { color: #888; text-decoration: none; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+.footer-col a:hover { color: var(--color-500); }
+
+.wa-link { color: var(--color-500) !important; font-weight: bold; text-decoration: underline !important; }
+
+.footer-map { width: 100%; height: 300px;  margin-bottom: 40px; border: 1px solid var(--color-900); }
+.footer-map iframe { width: 100%; height: 100%; border: none; }
+
+.footer-bottom { text-align: center; border-top: 1px solid #222; padding-top: 20px; color: #444; font-size: 0.8rem; }
+
+/* --- PÁGINA HORARIOS --- */
+.horario-page {
+    padding-top: 100px;
+    background: linear-gradient(rgba(18, 16, 8, 0.95), rgba(18, 16, 8, 0.95)), 
+                url('assets/snake_bg.png') no-repeat center center/contain;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--color-50);
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 10px rgba(179, 163, 77, 0.3);
+}
+
+.table-responsive { overflow-x: auto; margin-bottom: 50px; }
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-50);
+    text-align: center;
+    font-size: 0.85rem;
+    border: 1px solid var(--color-800);
+}
+
+.schedule-table th {
+    background-color: var(--color-900);
+    color: var(--color-500);
+    padding: 15px;
+    border: 1px solid var(--color-800);
+    text-transform: uppercase;
+}
+
+.schedule-table td {
+    padding: 12px;
+    border: 1px solid var(--color-800);
+    background: rgba(18, 16, 8, 0.6);
+}
+
+.class-boxeo { font-weight: bold; }
+.class-thai { color: var(--color-400); font-weight: bold; }
+.class-kids { color: #aaa; font-style: italic; }
+.class-mix { border: 1px solid var(--color-500) !important; color: var(--color-500); }
+
+.pricing-list { max-width: 600px; margin: 0 auto; text-align: left; }
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-900);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.price-item.featured { background: var(--color-900); border: 1px solid var(--color-500); margin-top: 10px; }
+.gold { color: var(--color-500); }
+
+.foot-note {
+    text-align: center;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    color: var(--color-400);
+    font-weight: bold;
+}
+
+/* --- RESPONSIVE --- */
+/* 1. PEGA ESTO JUSTO ANTES DE @media (max-width: 768px) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-500);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* 2. SUSTITUYE TU @media (max-width: 768px) POR ESTO */
+/* --- RESPONSIVE --- */
+
+.menu-toggle {
+    display: none; /* Escondido por defecto en PC */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-500);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Se muestra solo en móvil */
+    }
+
+    .nav-links {
+        display: flex; /* Cambiamos de none a flex */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed; /* Mejor fixed para que cubra la pantalla */
+        top: -100vh; /* Escondido arriba */
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(18, 16, 8, 0.98);
+        padding: 40px 0;
+        transition: 0.5s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        top: 0; /* Baja el menú al activarse */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Más grande para que sea fácil tocar con el dedo */
+    }
+
+    .btn-nav {
+        display: none; /* Ocultamos el botón de WhatsApp en el nav de móvil */
+    }
+
+    /* Animación del botón a "X" */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+
+    /* Ajustes de títulos en móvil */
+    .hero h1 { font-size: 4rem; }
+    .container { padding: 60px 5%; }
+    .section-title { font-size: 2rem; }
+    .main-title { font-size: 2.5rem; }
+}
+
+@media (max-width: 600px) {
+    .schedule-table { font-size: 0.7rem; }
+    .price-item { font-size: 0.9rem; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .schedule-table { font-size: 0.7rem; }
+    .price-item { font-size: 0.9rem; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+}
